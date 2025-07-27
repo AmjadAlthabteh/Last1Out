@@ -1,0 +1,161 @@
+Create the Project
+Unity 3D, URP if need want some lighting juice. Name it something fire like Carks or Rot City.
+
+Player Setup
+Drop in a player model or a placeholder. Add a CharacterController or Rigidbody if you’re going physics-based. Set up movement script with Input.GetAxis() for WASD or joystick. Smooth inputs only—don’t make it stiff.
+
+Camera Follow
+Use Cinemachine drag it in, set Follow/LookAt to the player. Done. Feels clean.
+
+Idle/Walk Animations
+Animator time.
+
+Set up parameters: Speed, maybe IsRunning.
+
+Idle when Speed == 0, Walk when > 0.
+
+Blend tree if need smoother
+ don’t forget to actually plug the Animator into the movement script.
+
+Weapon Setup
+
+Gun model in player’s hand (child of hand bone or just position it right).
+
+Shooting script: Raycast from camera forward or spawn bullets with rigidbody + velocity.
+
+Add muzzle flash and sound (spawn particle prefab, play gunshot sound).
+
+Anim: recoil, reload.
+
+Bullet impact? Instantiate blood, sparks, whatever fits.
+
+Zombie Model & Idle/Walk Anim
+Drop in zombie model, attach Animator.
+Set up Idle/Walk/Attack animations in Animator Controller.
+Add blend tree if you're doing smooth transitions.
+Keep it janky if that’s your vibe.
+
+Zombie AI Movement
+Use NavMesh:
+
+Bake the map
+
+Add NavMeshAgent to zombie
+
+Script it to set agent.destination = player.transform.position
+
+Switch to attack animation when close enough
+
+LookAt player or rotate with Quaternion.LookRotation()
+Optional: Add some random idle wandering if not chasing.
+
+Zombie Attack Logic
+
+Set up trigger or distance check
+
+On contact: reduce player health
+
+Add attack delay so it’s not spammy
+
+Play hit animation & sound
+
+Player Damage System
+
+Add health script
+
+Show health bar (UI slider or just a red overlay)
+
+Death animation or ragdoll on 0 HP
+
+Trigger Game Over screen n Zombie Health & Death
+
+Zombies take damage on hit
+
+Show blood particle or animation
+
+Destroy or ragdoll on 0 HP
+
+Maybe drop something (ammo, health)
+
+Animations Matter
+Don’t be lazyyyyyyyyy
+
+Reload anim
+
+Gun recoil
+
+Player damage flash
+
+Zombie stumbles or flinches when shot
+These little things = JUICE.
+
+Zombie Spawner
+
+Empty GameObjects = spawn points
+
+Script spawns zombies at random points over time
+
+Add wave system or infinite spawn with difficulty ramp
+
+UI Setup
+
+Health bar
+
+Ammo count
+
+Zombie kill count
+
+Crosshair
+
+Wave number
+Clean, no clutter. Keep it visible.
+
+Sound Design
+
+Gunshots
+
+Zombie groan 
+Footsteps
+
+Ambient horror track
+Sound makes your game feel 5x better. Trust me.
+
+Reload Mechanic
+
+Track ammo
+
+R to reload
+
+Wait for reload anim to finish before allowing fire
+
+Dry fire sound when you’re out? Always a nice touch
+
+Build a Map
+
+Layout matters: choke points, open areas, corners to get trapped in
+
+Drop in props: cars, barrels, fences
+
+Add lighting—baked or realtime for atmosphere
+
+Use fog
+End Conditions
+
+Player dies = Game Over
+
+Survive X waves = Victory
+
+Or go full arcade = endless, high score, leaderboard
+
+Polish & Juice
+
+Screen shake on shots
+
+Flash when hit
+
+Blood decals
+
+Anim transitions smooth
+
+Particles for everything
+This is what makes it feel good.
