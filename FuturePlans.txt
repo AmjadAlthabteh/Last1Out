@@ -1,0 +1,21 @@
+Planned Updates
+
+The following features are planned as the project continues to develop:
+
+Additional enemy types with unique movement and attack patterns
+
+More weapons, including shotguns, rifles, explosives, and experimental gear
+
+New maps with environmental hazards and interactive elements
+
+A permanent progression system with unlocks and challenges
+
+Expanded sound design and music
+
+Improved visual effects for gunfire, impacts, and gore
+
+Optimization passes for large-scale enemy encounters
+
+Custom difficulty modes and optional modifiers
+
+Updates will be released as systems become stable and tested.
