@@ -1,19 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectToHit : MonoBehaviour
 {
-    public float ObjectHealth = 100f;
+    public float maxHealth = 100f;
+    private float currentHealth;
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
 
     public void ObjectHitDamage(float amount)
     {
-        ObjectHealth -= amount;
-        if(ObjectHealth <= 0)
+        currentHealth -= amount;
+
+        if (currentHealth <= 0)
         {
             Die();
         }
-
     }
 
     void Die()
@@ -21,3 +25,4 @@ public class ObjectToHit : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
